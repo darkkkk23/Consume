@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif; 
+    background-color: #210033;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+}
+#bgVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.8; /* Sesuaikan jika ingin lebih gelap/terang */
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.card {
+    background: radial-gradient(circle at top left, #2e004d00, #1a002c07);
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    text-align: center;
+    width: 100%;
+    max-width: 340px;
+    position: relative;
+}
+
+.title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+    padding-bottom: 10px; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
+    margin-bottom: 30px;
+}
+
+.lyrics {
+    min-height: 140px;
+    scroll-behavior: smooth; 
+}
+
+.lyrics p {
+    font-size: 14px;
+    margin: 6px 0;
+    color: #ffffff; 
+    text-shadow: none; 
+    transition: opacity 0.4s ease; 
+    min-height: 20px;
+}
+
+.lyrics p.active {
+    opacity: 1; /* Opasitas penuh untuk lirik aktif */
+    font-weight: bold;
+}
+
+.lyrics p.inactive {
+    opacity: 0.4; /* Opasitas lebih rendah untuk lirik tidak aktif */
+}
+
+#playBtn {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#playIcon {
+    transition: transform 0.2s ease;
+}
+
+#playBtn:active #playIcon {
+    transform: scale(0.9);
+}
+
+
+
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.progress-bar-wrapper {
+    flex: 1;
+    background: #333;
+    height: 4px;
+    border-radius: 2px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#progress-bar {
+    background: #210033;
+    width: 0%;
+    height: 100%;
+    transition: width 0.2s linear;
+}
+
+.credit {
+    font-size: 9px;
+    color: #ccc;
+    margin-top: 10px;
+}
+
+/* 📱 Responsive */
+@media (max-width: 480px) {
+    .card {
+        padding: 25px 20px;
+        max-width: 100%;
+    }
+
+    .title {
+        font-size: 16px;
+    }
+
+    .lyrics p {
+        font-size: 12px;
+    }
+}
